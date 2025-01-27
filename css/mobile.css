@@ -89,7 +89,7 @@
 }
 
 .navbar {
-    background-color: #232323;
+    background-color: #000000;
     overflow: hidden;
     height: 70px; /* Définit une hauteur fixe pour la navbar */
     display: flex;
