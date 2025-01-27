@@ -74,6 +74,13 @@
   src:  url('/police/CormorantGaramond-Regular.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'tagText';
+  font-style: normal;
+  font-weight: bold;
+  src:  url('/police/PhillySans.otf') format('opentype');
+}
+
 
 /* Styles for the overlay */
 #overlay {
