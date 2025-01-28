@@ -4,6 +4,13 @@
   font-weight: normal;
   src:  url('/police/BRLNSR.woff') format('woff');
 }
+
+@font-face {
+  font-family: 'tag3';
+  font-style: normal;
+  font-weight: normal;
+  src:  url('/police/tag3.ttf') format('truetype');
+}
 @font-face {
   font-family: 'Brush Script MT';
   font-style: normal;
