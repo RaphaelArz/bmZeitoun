@@ -17,8 +17,8 @@
 }
 
 .txtOverlay{
-    font-family: "Great Vibes", sans-serif;
-    font-size: 3rem;
+    font-family: "tag", sans-serif;
+    font-size: 2.5rem;
     color: #000000;
     margin-bottom: 1.2rem;
 }
@@ -30,7 +30,7 @@
     color: #000000;
     border-radius: 0.2rem;
     margin: 2.2rem;
-    border: 2px solid #00FF98FF; /* Ajoute une bordure blanche de 2 pixels */
+    border: 2px solid #333333; /* Ajoute une bordure blanche de 2 pixels */
     text-decoration: none;
     background-color: transparent;
     transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, transform 0.5s ease;
@@ -38,8 +38,8 @@
 
 .btnLink:hover {
     background-color: #ffffff;
-    color: #00FF98FF;
-    border: 2px solid #00FF98FF; /* Ajoute une bordure noire de 2 pixels */
+    color: #333333;
+    border: 2px solid #333333; /* Ajoute une bordure noire de 2 pixels */
     transform: scale(1.05); /* Légère mise à l'échelle pour un effet de grossissement */
 }
 
@@ -94,7 +94,6 @@
     height: 70px; /* Définit une hauteur fixe pour la navbar */
     display: flex;
     align-items: center; /* Centre verticalement les éléments de la navbar */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.56); /* Ajoute une ombre en bas */
     padding: 0.5rem;
     justify-content: center;
     position: fixed;
@@ -151,10 +150,10 @@
     font-size: 3rem;
     color: rgba(0, 255, 152);
     text-shadow:
-            -2px -2px 0 #011b79,
-            2px -2px 0 #011b79,
-            -2px  2px 0 #011b79,
-            2px  2px 0 #011b79; /* Bordure noire */
+            -2px -2px 0 #333333,
+            2px -2px 0 #333333,
+            -2px  2px 0 #333333,
+            2px  2px 0 #333333; /* Bordure noire */
     margin-bottom: 1.5rem;
 }
 
@@ -258,10 +257,10 @@ form input[type="submit"] {
     font-size: 1rem;
     font-family: DMSerif, sans-serif;
     padding: 0.8rem ;
-    color: #ffffff;
+    color: rgb(30, 31, 34);
     border-radius: 0.2rem;
     margin: 2.2rem;
-    border: 2px solid #dab984; /* Ajoute une bordure blanche de 2 pixels */
+    border: 2px solid #00fb96; /* Ajoute une bordure blanche de 2 pixels */
     text-decoration: none;
     background-color: rgba(255, 255, 255, 0);
 
@@ -269,14 +268,14 @@ form input[type="submit"] {
 }
 
 form input[type="submit"]:hover {
-    background-color: #ffffff;
+    background-color: #333333;
     font-size: 1rem;
     font-family: DMSerif, sans-serif;
     padding: 0.8rem ;
-    color: #dab984;
+    color: #00fd97;
     border-radius: 0.2rem;
     margin: 2.2rem;
-    border: 3px solid #dab984; /* Ajoute une bordure blanche de 2 pixels */
+    border: 3px solid #00fb96; /* Ajoute une bordure blanche de 2 pixels */
     transition: background-position 1s ease-in-out, color 0.3s, border-color 0.3s; /* Transition douce pour les changements de couleur et l'animation */
     background-position: left bottom;
 
