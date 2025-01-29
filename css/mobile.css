@@ -19,7 +19,7 @@
 .txtOverlay{
     font-family: "Great Vibes", sans-serif;
     font-size: 3rem;
-    color: #ffffff;
+    color: #000000;
     margin-bottom: 1.2rem;
 }
 
@@ -27,10 +27,10 @@
     font-size: 1rem;
     font-family: 'tagText', sans-serif;
     padding: 0.8rem;
-    color: #ffffff;
+    color: #000000;
     border-radius: 0.2rem;
     margin: 2.2rem;
-    border: 2px solid #dab984; /* Ajoute une bordure blanche de 2 pixels */
+    border: 2px solid #00FF98FF; /* Ajoute une bordure blanche de 2 pixels */
     text-decoration: none;
     background-color: transparent;
     transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, transform 0.5s ease;
@@ -38,8 +38,8 @@
 
 .btnLink:hover {
     background-color: #ffffff;
-    color: #ceaf7d;
-    border: 2px solid #dab984; /* Ajoute une bordure noire de 2 pixels */
+    color: #00FF98FF;
+    border: 2px solid #00FF98FF; /* Ajoute une bordure noire de 2 pixels */
     transform: scale(1.05); /* Légère mise à l'échelle pour un effet de grossissement */
 }
 
@@ -54,7 +54,7 @@
 }
 .elementDecompte{
     margin-right: 1rem;
-    border: 3px solid #dab984;
+    border: 3px solid #00FF98FF;
     border-radius: 10px;
     width: 70px; /* Largeur fixe pour une taille uniforme */
     height: 70px; /* Hauteur fixe pour une taille uniforme */
@@ -64,7 +64,7 @@
     flex-direction: column;
 }
 .elementDecompte2{
-    border: 3px solid #dab984;
+    border: 3px solid #00FF98FF;
     border-radius: 10px;
     width: 70px; /* Largeur fixe pour une taille uniforme */
     height: 70px; /* Hauteur fixe pour une taille uniforme */
@@ -77,10 +77,10 @@
 .texteDecompte{
     font-family: tagText, sans-serif;
     font-size: 1rem;
-    color: #ffffff;
+    color: #000000;
 }
 .chiffreDecompte{
-    color: #ffffff;
+    color: #000000;
     font-family: tagText ,sans-serif;
     font-size: 1.6rem;
     align-items: center;
@@ -107,7 +107,7 @@
     width: auto;
 }
 .element{
-    box-shadow: 0 2px 6px rgb(218, 185, 132); /* Ajoute une ombre en bas */
+  /*  box-shadow: 0 2px 6px rgb(218, 185, 132); /* Ajoute une ombre en bas */
 
     background-color: rgba(255, 255, 255, 0);
     width: 90%;
@@ -147,9 +147,14 @@
 
 /* Existing text classes */
 .txtItalic {
-    font-family: pinyon, sans-serif;
-    font-size: 2.7rem;
-    color: #dab984;
+    font-family: tag3 , sans-serif;
+    font-size: 3rem;
+    color: rgba(0, 255, 152);
+    text-shadow:
+            -2px -2px 0 #011b79,
+            2px -2px 0 #011b79,
+            -2px  2px 0 #011b79,
+            2px  2px 0 #011b79; /* Bordure noire */
     margin-bottom: 1.5rem;
 }
 
@@ -158,8 +163,9 @@
     font-family: tagText, sans-serif;
     font-style: italic;
     font-size: 6.5vw;
-    color: #ffffff;
+    color: #333333;
     margin-bottom: 0.6rem;
+
 }
 
 .txtDroitGras {
@@ -168,7 +174,7 @@
     font-weight: bold;
     font-size: 1.6rem;
     margin-bottom: 0.5rem;
-    color: #ffffff;
+    color: #333333;
 }
 
 .titre {
@@ -178,12 +184,16 @@
     flex-direction: column;
     font-family: "tag3", sans-serif;
     font-size: 20vw;
-    color: #ffffff;
+    color: #00FF98FF;
     margin-bottom: 2rem;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8),
-    0 0 20px rgba(0, 0, 0, 0.6),
-    0 0 30px rgba(0, 0, 0, 0.4);
-}
+    /*text-shadow: 0 0 10px rgba(0, 255, 152, 0.44),*/
+    /*0 0 20px rgba(0, 253, 118, 0.37),*/
+    /*0 0 30px rgba(0, 251, 50, 0.2);*/
+    text-shadow:
+            -2px -2px 0 #333333,
+            2px -2px 0 #333333,
+            -2px  2px 0 #333333,
+            2px  2px 0 #333333; /* Bordure noire */}
 
 /* Fade-in class when elements are in view */
 .fade-in-visible {
