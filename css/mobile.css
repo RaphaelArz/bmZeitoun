@@ -219,15 +219,16 @@
     font-size: 20vw;
     color: #282828;
     margin-bottom: 2rem;
-    /*text-shadow: 0 0 10px rgba(0, 255, 152, 0.44),*/
-    /*0 0 20px rgba(0, 253, 118, 0.37),*/
-    /*0 0 30px rgba(0, 251, 50, 0.2);*/
-    text-shadow:
-            0 0 5px #fff,
-            0 0 10px #fff,
-            0 0 20px #fff,
-            0 0 40px #ccc,
-            0 0 80px #bbb;
+
+    text-shadow: 2px 2px 4px white, -2px -2px 4px white, 2px -2px 4px white, -2px 2px 4px white;
+
+
+    /*text-shadow:*/
+    /*        0 0 5px #fff,*/
+    /*        0 0 10px #fff,*/
+    /*        0 0 20px #fff,*/
+    /*        0 0 40px #ccc,*/
+    /*        0 0 80px #bbb;*/
 
 }
 
