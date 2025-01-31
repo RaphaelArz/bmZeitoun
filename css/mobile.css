@@ -225,7 +225,7 @@
 
 /* Fade-in class when elements are in view */
 .fade-in-visible {
-    animation: fadeIn 1s ease-in forwards; /* Animation applied when element is in view */
+    animation: fadeIn 1.5s ease-in forwards; /* Animation applied when element is in view */
 }
 
 .oukchartam{
