@@ -88,6 +88,14 @@
   src:  url('/police/PhillySans.otf') format('opentype');
 }
 
+@font-face {
+  font-family: 'tag4';
+  font-style: normal;
+  font-weight: bold;
+  src:  url('/police/GraffitiYouth-Regular.otf') format('opentype');
+}
+
+
 
 /* Styles for the overlay */
 #overlay {
