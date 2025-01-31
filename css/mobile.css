@@ -38,7 +38,7 @@
 }
 
 .btnLink {
-    font-size: 1rem;
+    font-size: 1.3rem;
     font-family: 'tagText', sans-serif;
     padding: 0.8rem;
     color: #000000;
@@ -160,7 +160,7 @@
 
 /* Existing text classes */
 .txtItalic {
-    font-family: tag3 , sans-serif;
+    font-family: tag4 , sans-serif;
     font-size: 3rem;
     color: #282828;
     text-shadow:
