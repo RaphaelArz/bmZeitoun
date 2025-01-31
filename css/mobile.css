@@ -12,15 +12,28 @@
 #overlay img{
     width: 80%;
     height: auto;
+
     margin-bottom: 0.5rem;
 
 }
 
+#divOverlay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .txtOverlay{
     font-family: "tag", sans-serif;
-    font-size: 2.5rem;
+    font-size: 4rem;
     color: #000000;
-    margin-bottom: 1.2rem;
+    margin-bottom: 2rem;
+    text-shadow:
+            -3px -3px 0 #ffffff,
+            3px -3px 0 #ffffff,
+            -3px  3px 0 #ffffff,
+            3px  3px 0 #ffffff; /* Bordure noire */
 }
 
 .btnLink {
@@ -30,7 +43,7 @@
     color: #000000;
     border-radius: 0.2rem;
     margin: 2.2rem;
-    border: 2px solid #333333; /* Ajoute une bordure blanche de 2 pixels */
+    border: 2px solid #282828; /* Ajoute une bordure blanche de 2 pixels */
     text-decoration: none;
     background-color: transparent;
     transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, transform 0.5s ease;
@@ -38,8 +51,8 @@
 
 .btnLink:hover {
     background-color: #ffffff;
-    color: #333333;
-    border: 2px solid #333333; /* Ajoute une bordure noire de 2 pixels */
+    color: #282828;
+    border: 2px solid #282828; /* Ajoute une bordure noire de 2 pixels */
     transform: scale(1.05); /* Légère mise à l'échelle pour un effet de grossissement */
 }
 
@@ -54,7 +67,7 @@
 }
 .elementDecompte{
     margin-right: 1rem;
-    border: 3px solid #00FF98FF;
+    border: 3px solid #282828;
     border-radius: 10px;
     width: 70px; /* Largeur fixe pour une taille uniforme */
     height: 70px; /* Hauteur fixe pour une taille uniforme */
@@ -64,7 +77,7 @@
     flex-direction: column;
 }
 .elementDecompte2{
-    border: 3px solid #00FF98FF;
+    border: 3px solid #282828;
     border-radius: 10px;
     width: 70px; /* Largeur fixe pour une taille uniforme */
     height: 70px; /* Hauteur fixe pour une taille uniforme */
@@ -148,12 +161,12 @@
 .txtItalic {
     font-family: tag3 , sans-serif;
     font-size: 3rem;
-    color: rgba(0, 255, 152);
+    color: #282828;
     text-shadow:
-            -2px -2px 0 #333333,
-            2px -2px 0 #333333,
-            -2px  2px 0 #333333,
-            2px  2px 0 #333333; /* Bordure noire */
+            -2px -2px 0 #ffffff,
+            2px -2px 0 #ffffff,
+            -2px  2px 0 #ffffff,
+            2px  2px 0 #ffffff; /* Bordure noire */
     margin-bottom: 1.5rem;
 }
 
@@ -162,8 +175,13 @@
     font-family: tagText, sans-serif;
     font-style: italic;
     font-size: 6.5vw;
-    color: #333333;
+    color: #282828;
     margin-bottom: 0.6rem;
+    text-shadow:
+            -2px -2px 0 #ffffff,
+            2px -2px 0 #ffffff,
+            -2px  2px 0 #ffffff,
+            2px  2px 0 #ffffff; /* Bordure noire */
 
 }
 
@@ -173,7 +191,12 @@
     font-weight: bold;
     font-size: 1.6rem;
     margin-bottom: 0.5rem;
-    color: #333333;
+    color: #282828;
+    text-shadow:
+            -2px -2px 0 #ffffff,
+            2px -2px 0 #ffffff,
+            -2px  2px 0 #ffffff,
+            2px  2px 0 #ffffff; /* Bordure noire */
 }
 
 .titre {
@@ -183,16 +206,16 @@
     flex-direction: column;
     font-family: "tag3", sans-serif;
     font-size: 20vw;
-    color: #00FF98FF;
+    color: #282828;
     margin-bottom: 2rem;
     /*text-shadow: 0 0 10px rgba(0, 255, 152, 0.44),*/
     /*0 0 20px rgba(0, 253, 118, 0.37),*/
     /*0 0 30px rgba(0, 251, 50, 0.2);*/
     text-shadow:
-            -2px -2px 0 #333333,
-            2px -2px 0 #333333,
-            -2px  2px 0 #333333,
-            2px  2px 0 #333333; /* Bordure noire */}
+            -2px -2px 0 #ffffff,
+            2px -2px 0 #ffffff,
+            -2px  2px 0 #ffffff,
+            2px  2px 0 #ffffff; /* Bordure noire */}
 
 /* Fade-in class when elements are in view */
 .fade-in-visible {
@@ -202,6 +225,8 @@
 .oukchartam{
     width: 100%;
     height: auto;
+    filter: drop-shadow(1px 1px 0 #ffffff)
+    drop-shadow(-1px -1px 0 #ffffff);
 }
 
 form {
@@ -220,7 +245,7 @@ form label {
     font-family: DMSerif, sans-serif;
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
-    color: #333333;
+    color: #282828;
 }
 
 .form-group {
@@ -229,11 +254,11 @@ form label {
 }
 
 label{
-    color: #333333;
+    color: #282828;
 }
 
 .checkbox-group {
-    color: #333333;
+    color: #282828;
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
@@ -273,7 +298,7 @@ form input[type="submit"] {
 }
 
 form input[type="submit"]:hover {
-    background-color: #333333;
+    background-color: #282828;
     font-size: 1rem;
     font-family: DMSerif, sans-serif;
     padding: 0.8rem ;
