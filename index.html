@@ -208,93 +208,143 @@
 
     <a class="txtDroit">Deborah : 06.61.09.93.74</a>
 
-   <div class="element">
-       <a class="titre">REPONSE</a>
+    <div class="element">
+        <a class="titre">REPONSE</a>
 
+        <form id="myForm" method="post">
+            <div class="form-group">
+                <label for="nom">Nom:</label>
+                <input type="text" id="nom" name="nom" required>
+            </div>
+            <div class="form-group">
+                <label for="prenom">Prénom:</label>
+                <input type="text" id="prenom" name="prenom" required>
+            </div>
 
-       <form id="myForm" method="post">
-           <div class="form-group">
-               <label for="nom">Nom:</label>
-               <input type="text" id="nom" name="nom" required>
-           </div>
-           <div class="form-group">
-               <label for="prenom">Prénom:</label>
-               <input type="text" id="prenom" name="prenom" required>
-           </div>
-           <div class="checkbox-group">
-               <input type="checkbox" id="ne-pourront-assister" name="ne-pourront-assister">
-               <label  for="ne-pourront-assister">Ne pourront pas assister</label>
-           </div>
-           <div class="checkbox-group">
-               <input type="checkbox" id="reception" name="reception">
-               <label for="reception">Assisteront à la réception</label>
-           </div>
-           <div id="receptionField" class="hidden">
-               <div>
-                   <label for="nombreAdultesReception">Nombre d'adultes à la réception:</label>
-                   <input type="number" id="nombreAdultesReception" name="nombreAdultesReception" min="0">
-               </div>
-               <div>
-                   <label for="nombreEnfantsReception">Nombre d'enfants à la réception:</label>
-                   <input type="number" id="nombreEnfantsReception" name="nombreEnfantsReception" min="0">
-               </div>
-           </div>
-           <div class="checkbox-group">
-               <input type="checkbox" id="chabbat" name="chabbat">
-               <label for="chabbat">Assisteront au chabbat</label>
-           </div>
-           <div id="chabbatField" class="hidden">
-               <div>
-                   <label for="nombreAdultesChabbat">Nombre d'adultes au chabbat:</label>
-                   <input type="number" id="nombreAdultesChabbat" name="nombreAdultesChabbat" min="0">
-               </div>
-               <div>
-                   <label for="nombreEnfantsChabbat">Nombre d'enfants au chabbat:</label>
-                   <input type="number" id="nombreEnfantsChabbat" name="nombreEnfantsChabbat" min="0">
-               </div>
-           </div>
-           <div class="form-group">
-               <label for="message">Message pour Benjamin:</label>
-               <textarea id="message" name="message" placeholder="Mazal tov Benjamin !" rows="4"></textarea>
-           </div>
-           <button type="submit" class="btnLink">
-               <i class="fas fa-paper-plane"></i> Envoyer
-           </button>
-       </form>
-   </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="ne-pourront-assister" name="ne-pourront-assister">
+                <label for="ne-pourront-assister">Ne pourront pas assister</label>
+            </div>
 
-</div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="tefiline" name="tefiline">
+                <label for="tefiline">Assisteront aux Tefiline</label>
+            </div>
+            <div id="tefilineField" class="hidden">
+                <label for="nombreAdultesTefiline">Nombre d'adultes aux Tefiline:</label>
+                <input type="number" id="nombreAdultesTefiline" name="nombreAdultesTefiline" min="0">
+                <label for="nombreEnfantsTefiline">Nombre d'enfants aux Tefiline:</label>
+                <input type="number" id="nombreEnfantsTefiline" name="nombreEnfantsTefiline" min="0">
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="chabbat" name="chabbat">
+                <label for="chabbat">Assisteront au Chabbat</label>
+            </div>
+            <div id="chabbatField" class="hidden">
+                <label for="nombreAdultesChabbat">Nombre d'adultes au Chabbat:</label>
+                <input type="number" id="nombreAdultesChabbat" name="nombreAdultesChabbat" min="0">
+                <label for="nombreEnfantsChabbat">Nombre d'enfants au Chabbat:</label>
+                <input type="number" id="nombreEnfantsChabbat" name="nombreEnfantsChabbat" min="0">
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="reception" name="reception">
+                <label for="reception">Assisteront à la réception</label>
+            </div>
+            <div id="receptionField" class="hidden">
+                <label for="nombreAdultesReception">Nombre d'adultes à la réception:</label>
+                <input type="number" id="nombreAdultesReception" name="nombreAdultesReception" min="0">
+                <label for="nombreEnfantsReception">Nombre d'enfants à la réception:</label>
+                <input type="number" id="nombreEnfantsReception" name="nombreEnfantsReception" min="0">
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message pour Benjamin:</label>
+                <textarea id="message" name="message" placeholder="Mazal tov Benjamin !" rows="4"></textarea>
+            </div>
+
+            <button type="submit" class="btnLink">
+                <i class="fas fa-paper-plane"></i> Envoyer
+            </button>
+
+        </form>
+    </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const nePourrontAssisterCheckbox = document.getElementById('ne-pourront-assister');
+            const eventCheckboxes = [
+                { checkbox: document.getElementById('tefiline'), field: document.getElementById('tefilineField') },
+                { checkbox: document.getElementById('chabbat'), field: document.getElementById('chabbatField') },
+                { checkbox: document.getElementById('reception'), field: document.getElementById('receptionField') }
+            ];
+
+            // Gestion des champs Adultes/Enfants pour chaque événement
+            eventCheckboxes.forEach(({ checkbox, field }) => {
+                checkbox.addEventListener('change', function() {
+                    field.classList.toggle('hidden', !this.checked);
+
+                    // Si un événement est coché, décocher "Ne pourront pas assister"
+                    if (this.checked) {
+                        nePourrontAssisterCheckbox.checked = false;
+                    }
+                });
+            });
+
+            // Si "Ne pourront pas assister" est coché, décocher les autres cases
+            nePourrontAssisterCheckbox.addEventListener('change', function() {
+                if (this.checked) {
+                    eventCheckboxes.forEach(({ checkbox, field }) => {
+                        checkbox.checked = false;
+                        field.classList.add('hidden');
+                    });
+                }
+            });
+
+            // Validation du formulaire avant soumission
+            document.getElementById('myForm').addEventListener('submit', function(event) {
+                // Vérification que le nom et prénom sont remplis
+                const nom = document.getElementById('nom').value;
+                const prenom = document.getElementById('prenom').value;
+
+                if (!nom || !prenom) {
+                    alert("Le nom et le prénom sont obligatoires !");
+                    event.preventDefault();
+                    return;
+                }
+
+                // Vérification que si un événement est coché, au moins un champ (Adultes ou Enfants) est rempli
+                let formIsValid = true;
+                eventCheckboxes.forEach(({ checkbox, field }) => {
+                    if (checkbox.checked) {
+                        const adultField = field.querySelector('input[name^="nombreAdultes"]');
+                        const childrenField = field.querySelector('input[name^="nombreEnfants"]');
+                        if (!adultField.value && !childrenField.value) {
+                            formIsValid = false;
+                            alert("Veuillez remplir au moins un champ pour l'événement sélectionné.");
+                        }
+                    }
+                });
+
+                if (!formIsValid) {
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
 
 
 <audio id="myAudio" src="/musique/mahchavot.mp3"></audio>
 
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const receptionCheckbox = document.getElementById('reception');
-        const chabbatCheckbox = document.getElementById('chabbat');
-        const receptionField = document.getElementById('receptionField');
-        const chabbatField = document.getElementById('chabbatField');
 
-        receptionCheckbox.addEventListener('change', function() {
-            if (this.checked) {
-                receptionField.classList.remove('hidden');
-            } else {
-                receptionField.classList.add('hidden');
-            }
-        });
 
-        chabbatCheckbox.addEventListener('change', function() {
-            if (this.checked) {
-                chabbatField.classList.remove('hidden');
-            } else {
-                chabbatField.classList.add('hidden');
-            }
-        });
-    });
-</script>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script defer src="/js/coche.js"></script>
 <script defer src="/js/audio.js"></script>
