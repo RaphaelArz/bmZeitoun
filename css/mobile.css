@@ -176,6 +176,7 @@
 
 
 .img {
+    margin-bottom: 5vh;
     width: 100vw; /* 100% de la largeur du viewport */
     height: auto; /* Garde les proportions */
     display: block; /* Évite l'espace sous l'image */
