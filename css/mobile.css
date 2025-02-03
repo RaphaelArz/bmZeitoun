@@ -51,6 +51,7 @@
 }
 
 .btnLink:hover {
+    font-weight: bold;
     background-color: #ffffff;
     color: #282828;
     border: 2px solid #282828; /* Ajoute une bordure noire de 2 pixels */
@@ -161,7 +162,7 @@
 /* Existing text classes */
 .txtItalic {
     font-family: tag4 , sans-serif;
-    font-size: 5vh;
+    font-size: 6.5vh;
     color: #282828;
     letter-spacing: 3px;
     text-shadow:
