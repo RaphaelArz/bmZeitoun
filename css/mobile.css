@@ -197,6 +197,9 @@
             0 0 80px #bbb;
 
 }
+.fa-solid{
+    margin-bottom: 5vh;
+}
 
 .txtDroitGras {
     font-family: tagText, sans-serif;
