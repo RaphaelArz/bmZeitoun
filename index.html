@@ -297,11 +297,37 @@
             // Gestion des champs Adultes/Enfants pour chaque événement
             eventCheckboxes.forEach(({ checkbox, field }) => {
                 checkbox.addEventListener('change', function() {
-                    field.classList.toggle('hidden', !this.checked);
+                    const adultField = field.querySelector('input[name^="nombreAdultes"]');
+                    const childrenField = field.querySelector('input[name^="nombreEnfants"]');
 
-                    // Si un événement est coché, décocher "Ne pourront pas assister"
                     if (this.checked) {
+                        field.style.display = 'block'; // Affiche le champ avec animation
+                        field.style.opacity = '0';
+                        field.style.maxHeight = '0px';
+
+                        setTimeout(() => {
+                            field.style.opacity = '1';
+                            field.style.maxHeight = '500px';
+                            field.style.transition = 'opacity 0.3s ease, max-height 0.3s ease';
+                        }, 10);
+
+                        // Rend obligatoire au moins un des deux champs
+                        adultField.required = true;
+                        childrenField.required = true;
+
+                        // Décocher "Ne pourront pas assister"
                         nePourrontAssisterCheckbox.checked = false;
+                    } else {
+                        field.style.opacity = '0';
+                        field.style.maxHeight = '0px';
+
+                        setTimeout(() => {
+                            field.style.display = 'none';
+                        }, 300);
+
+                        // Supprime l'obligation des champs
+                        adultField.required = false;
+                        childrenField.required = false;
                     }
                 });
             });
@@ -311,41 +337,39 @@
                 if (this.checked) {
                     eventCheckboxes.forEach(({ checkbox, field }) => {
                         checkbox.checked = false;
-                        field.classList.add('hidden');
+                        field.style.display = 'none';
+
+                        // Supprime l'obligation des champs Adultes/Enfants
+                        const adultField = field.querySelector('input[name^="nombreAdultes"]');
+                        const childrenField = field.querySelector('input[name^="nombreEnfants"]');
+                        if (adultField) adultField.required = false;
+                        if (childrenField) childrenField.required = false;
                     });
                 }
             });
 
-            // Validation du formulaire avant soumission
+            // Validation du formulaire : on enlève l'alerte !
             document.getElementById('myForm').addEventListener('submit', function(event) {
-                // Vérification que le nom et prénom sont remplis
-                const nom = document.getElementById('nom').value;
-                const prenom = document.getElementById('prenom').value;
-
-                if (!nom || !prenom) {
-                    alert("Le nom et le prénom sont obligatoires !");
-                    event.preventDefault();
-                    return;
-                }
-
-                // Vérification que si un événement est coché, au moins un champ (Adultes ou Enfants) est rempli
                 let formIsValid = true;
+
                 eventCheckboxes.forEach(({ checkbox, field }) => {
                     if (checkbox.checked) {
                         const adultField = field.querySelector('input[name^="nombreAdultes"]');
                         const childrenField = field.querySelector('input[name^="nombreEnfants"]');
+
+                        // Vérifier que au moins un champ est rempli
                         if (!adultField.value && !childrenField.value) {
                             formIsValid = false;
-                            alert("Veuillez remplir au moins un champ pour l'événement sélectionné.");
                         }
                     }
                 });
 
                 if (!formIsValid) {
-                    event.preventDefault();
+                    event.preventDefault(); // Bloque la soumission, le navigateur affichera les messages de validation
                 }
             });
         });
+
     </script>
 
 
