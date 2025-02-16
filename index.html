@@ -296,36 +296,41 @@
 
             // Gestion des champs Adultes/Enfants pour chaque événement
             eventCheckboxes.forEach(({ checkbox, field }) => {
+                const adultField = field.querySelector('input[name^="nombreAdultes"]');
+                const childrenField = field.querySelector('input[name^="nombreEnfants"]');
+
                 checkbox.addEventListener('change', function() {
-                    const adultField = field.querySelector('input[name^="nombreAdultes"]');
-                    const childrenField = field.querySelector('input[name^="nombreEnfants"]');
-
                     if (this.checked) {
-                        field.style.display = 'block'; // Affiche le champ avec animation
+                        // Affiche le champ avec animation fluide
+                        field.style.display = 'block';
                         field.style.opacity = '0';
-                        field.style.maxHeight = '0px';
+                        field.style.transform = 'translateY(-20px)'; // Commence plus haut
 
+                        // Utilisation d'une transition fluide
                         setTimeout(() => {
+                            field.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
                             field.style.opacity = '1';
-                            field.style.maxHeight = '500px';
-                            field.style.transition = 'opacity 0.3s ease, max-height 0.3s ease';
+                            field.style.transform = 'translateY(0)';
                         }, 10);
 
-                        // Rend obligatoire au moins un des deux champs
+                        // Rendre les champs obligatoires
                         adultField.required = true;
                         childrenField.required = true;
 
                         // Décocher "Ne pourront pas assister"
                         nePourrontAssisterCheckbox.checked = false;
                     } else {
+                        // Retour au comportement caché avec transition
+                        field.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
                         field.style.opacity = '0';
-                        field.style.maxHeight = '0px';
+                        field.style.transform = 'translateY(-20px)'; // Part un peu plus haut
 
+                        // Masquer le champ après la transition
                         setTimeout(() => {
                             field.style.display = 'none';
                         }, 300);
 
-                        // Supprime l'obligation des champs
+                        // Supprimer l'obligation des champs
                         adultField.required = false;
                         childrenField.required = false;
                     }
@@ -348,7 +353,7 @@
                 }
             });
 
-            // Validation du formulaire : on enlève l'alerte !
+            // Validation du formulaire : on enlève l'alerte
             document.getElementById('myForm').addEventListener('submit', function(event) {
                 let formIsValid = true;
 
@@ -369,6 +374,7 @@
                 }
             });
         });
+
 
     </script>
 
